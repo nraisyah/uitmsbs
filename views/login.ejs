@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Login Page | UiTM SBS </title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
 
 </head>
 
@@ -47,9 +48,13 @@
 
       if (id === "admin" && ps === "admin") {
         window.location.replace("admindash.ejs");
-      } else if (id === "" && ps === ""){
+      } 
+      else if (id === "12345" && ps === "bad123") {
+        window.location.replace("home.ejs");}
+      else if (id === "" && ps === ""){
         window.alert("ID and/or Password fields cannot be empty");
-      } else {
+      }
+      else {
         window.location.replace("home.ejs");
       }
       return false;
