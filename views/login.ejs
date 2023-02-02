@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login Page | UiTM SBS </title>
+
+</head>
+
+<body>
+    <h1>UITM SPORT BOOKING SYSTEM</h1>
+   <div class="box">
+    
+    <div class="container">
+        
+        <div class="top">
+            <header>Login Form</header>
+        </div>
+        <form id="form" onsubmit="return auth(this)">
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Staff/Student ID" id="id">
+            <i class='bx bx-user' ></i>
+        </div>
+
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Password" id="ps">
+            <i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="" onclick="auth()">
+
+        </div>
+    </form>
+        
+    </div>
+</div>  
+</body>
+<script>
+    function auth(event) {
+      var id = event.id.value;
+      var ps = event.ps.value;
+
+      if (id === "admin" && ps === "admin") {
+        window.location.replace("admindash.ejs");
+      } else if (id === "" && ps === ""){
+        window.alert("ID and/or Password fields cannot be empty");
+      } else {
+        window.location.replace("home.ejs");
+      }
+      return false;
+    }
+  </script>
+</html>

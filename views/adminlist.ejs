@@ -1,0 +1,79 @@
+<%- include('./partials/adhead.ejs')%>
+<body>
+    <!-- (A) SIDEBAR -->
+    <div id="pgside">
+      <!-- (A1) BRANDING OR USER -->
+      <!-- LINK TO DASHBOARD OR LOGOUT -->
+      <div id="pguser">
+        <img src="potato.png">
+        <i class="txt">Welcome Admin</i>
+      </div>
+  
+      <!-- (A2) MENU ITEMS -->
+      <a href="admindash.ejs">
+        <i class="ico">&#9733;</i>
+        <i class="txt">Dashboard</i>
+      </a>
+      <a href="adminlist.ejs" class="current">
+        <i class="ico">&#9728;</i>
+        <i class="txt">List of Booking</i>
+      </a>
+      <a href="editBook.ejs">
+        <i class="ico">&#9728;</i>
+        <i class="txt">Edit Bookings</i>
+      </a>
+      <a href="./editCourt.ejs">
+        <i class="ico">&#9728;</i>
+        <i class="txt">Edit Courts</i>
+      </a>
+      <a href="./index.ejs">
+        <i class="ico">&#9737;</i>
+        <i class="txt">Log Out</i>
+      </a>
+    </div>
+
+    <!-- (B) MAIN -->
+    <main id="pgmain">
+      <table>
+        <thead>
+          <p>Booking Confirmation</p>
+        </thead>
+
+        <% if (booking.length > 0 && booking.Approved != 'true') { %>
+          <% booking.forEach(booking => { %>
+            <tbody>
+                <p>Name: <%= booking.Name %> </p>
+                <p>Student/Staff ID: <%= booking.SID %> </p>
+                <p>Phone Number: <%= booking.PhoneNum %> </p>
+                <p>Email: <%= booking.Email %> </p>
+                <p>Court Booked: <%= booking.Court %> </p>
+                <p>Date & Time Start: <%= booking.DateTimeStart %> </p>
+                <p>Duration (Mins): <%= booking.DurationMins %> </p>
+                <p>Details: <%= booking.Details %> </p>
+               
+                <form>
+                  <input type='radio' name='radio' value='accept'/>Accept</br>
+                  <input type='radio' name='radio' value='reject'/>Reject</br>
+                </form>
+            </tbody>
+            <% }) %>
+            <% } 
+            else { %>
+              <p>No bookings at this time </p>
+            <% }%>
+          </table>
+
+          <input type="Confirm" class="Confirm" value="Confirm" id="" onclick="onClick()">
+          <script>
+              function onClick(){
+                window.alert("Succesfully update!");
+                window.location.replace("admindash.ejs");
+             }
+          </script>
+      
+
+
+      <p>Copyright &copy; :BBAH 2022-2023. All rights reserved.</p>
+    </main>
+</body>
+</html>

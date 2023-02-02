@@ -1,0 +1,57 @@
+<%- include('./partials/adhead.ejs') %>
+
+<body>
+    <!-- (A) SIDEBAR -->
+    <div id="pgside">
+      <!-- (A1) BRANDING OR USER -->
+      <!-- LINK TO DASHBOARD OR LOGOUT -->
+      <div id="pguser">
+        <img src="potato.png">
+        <i class="txt">Welcome Admin</i>
+      </div>
+  
+      <!-- (A2) MENU ITEMS -->
+      <a href="./admindash.ejs">
+        <i class="ico">&#9733;</i>
+        <i class="txt">Dashboard</i>
+      </a>
+      <a href="./adminlist.ejs">
+        <i class="ico">&#9728;</i>
+        <i class="txt">List of Booking</i>
+      </a>
+      <a href="./editBook.ejs">
+        <i class="ico">&#9728;</i>
+        <i class="txt">Edit Bookings</i>
+      </a>
+      <a href="./editCourt.ejs" class="current">
+        <i class="ico">&#9728;</i>
+        <i class="txt">Edit Courts</i>
+      </a>
+      <a href="./index.ejs">
+        <i class="ico">&#9737;</i>
+        <i class="txt">Log Out</i>
+      </a>
+    </div>
+    <!-- (B) MAIN -->
+    <main id="pgmain">
+    
+        <form action="admindash.ejs" method="post">
+            <label>Court:
+                <select name="Court">
+                    <option value="SCA">Shah Alam Sports Complex A</option>
+                    <option value="SCB">Shah Alam Sports Complex B</option>
+                    <option value="SCC">Shah Alam Sports Complex C</option>
+                    <option value="SCD">Shah Alam Sports Complex D</option>
+                    <option value="FFA">Shah Alam Futsal Field A</option>
+                    <option value="FFB">Shah Alam Futsal Field B</option>
+                </select>
+            </label><br><br>    
+            <label>Court Name: </label><input type="text" name="Courtname"><br><br>
+            <label>Status:</label><input type="bool" name="Status"><br><br>
+            <label>Number Of Booking:</label><input type="number" name="NOB"><br><br>
+            <button type="submit" name="submit">Submit</button>
+        </form>
+        <p>Copyright &copy; :BBAH 2022-2023. All rights reserved.</p>
+    </main>
+    </body>
+</html>
